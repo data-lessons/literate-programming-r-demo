@@ -1,7 +1,8 @@
 ---
-title: "Adding citations to your Rmardown manuscript"
+title: "Adding citations to your R Markdown manuscript"
 author: "Tim Dennis"
 date: "August 20, 2017"
+bibliography: decoupling-dns.bib
 teaching: 45
 questions:
 - "How do I add citations to my RMarkdown document?"
@@ -18,35 +19,59 @@ output: html_document
 
 
 
-## R Markdown
+## Defining your bibliography
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Out of the box, RStudio and Knitr use the built-in citation rendering that pandoc provides. We set this in the `YAML` header information at the top of our R Markdown document. Pandoc can read a bibliographic file in various formats, including: MODS, BibLaTex, BibTex, RIS, EndNote, MEDLINE, etc. These are formats that provide a structured way to store a list of references. Let's take a look at the BibTex file we provided for this workshop:
 
 
 ~~~
-summary(cars)
+head -n 10 decoupling-dns.bib
 ~~~
 {: .r}
 
 
 
+
 ~~~
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
+
+ @Article{darwin,
+  author = {{Charles} {Darwin}},
+  title = {Unstable, Peer-to-Peer Modalities for Rasterization},
+  journal = {{Journal} of Multimodal Technology},
+  Month = jul,
+  Year = 2002,
+  Volume = 25,
+  Pages = {1--16}}
 ~~~
 {: .output}
 
-## Including Plots
+We see elements of an reference entry: `@Article` is the type, `cite:4` is citation-key, and other more elements of a reference. To tell RStudio to use our BibTex file we add `bibliography` key to our document header. 
 
-You can also embed plots, for example:
+```
+---
+title: "Adding citations to your R Markdown manuscript"
+author: "Tim Dennis"
+date: "August 20, 2017"
+bibliography: decoupling-dns.bib
+output: html_document
+---
+```
 
-<img src="../fig/rmd-03-pressure-1.png" title="plot of chunk pressure" alt="plot of chunk pressure" style="display: block; margin: auto;" />
+This will read `decoupling-dns.bib` file and use to create citations and a bibliography for our file when we render it using our `Knit` button. Let's walk through what that looks like. 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Creating a Citation
+
+The actually cite one of our bibtex entries we use the `@` symbol in a couple of ways.  To use an in-text citation use the following: 
+
+```
+The rest of this paper is organized as follows. We motivate the need for
+vacuum tubes. We place our work in context with the related work in this
+area @darwin.
+```
+
+The rest of this paper is organized as follows. We motivate the need for
+vacuum tubes. We place our work in context with the related work in this
+area @darwin.
+
+
+Notice that 
