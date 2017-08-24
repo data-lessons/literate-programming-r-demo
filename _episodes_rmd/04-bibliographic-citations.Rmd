@@ -151,15 +151,39 @@ nocite: |
   @qian, @minsky
 ...
 
-## Zotero integration 
+## Using Zotero 
 
-Now we have the basics down, let's think about our bibliography file again. Bibtex is nice and provides structure so a machine can read it, but we don't really want to write it ourself. We can let Zotero do that for us and keep an up-to-date synched Bibtex file in our project folder. That way we can use the more user friendly tool to create and mantain references and always have the latest copy in our project so R can read. 
+Now we have the basics down, let's think about our bibliography file again. Bibtex is nice and provides structure so a machine can read it, but we don't really want to write it ourself. We can let Zotero do that for us and export BibTex file as needed into our R project. We also can use the Zotero Better BibTex plugin to auto-save that BibTex bibliography to our project. Unfortunately, this plugin is broken for Zotero 5 and currently only works in 4. However, they are working on it. Regardless, using Zotero mean that we can use the more user friendly tool to create and mantain references and use that in our project so R can consume. 
 
-What do we need? 
+## Manually Exporting a Bibliography 
 
-1. Zotero with the BetterBibTex plugin installed
-2. A bibliography 
+![Screenshot of Zotero export](zotero5-bib-export.png)
 
 
+
+## Auto-synched Method (Only Zotero 4)
+
+screenshot of zotero4 betterbib
+
+rstudio view
+
+## Citr - An Easier Way to Add Citations
+
+The simulation of virtual communication has been widely studied. This
+approach is less expensive than ours. On a similar note, recent work by
+Anderson and Raman [@moore; @thomas; @williams] suggests a system for evaluating
+interactive technology, but does not offer an implementation.
+Contrarily, these solutions are entirely orthogonal to our efforts.
+
+
+>The seminal methodology by Thomas et al. [@dekker03; @jackson; @minsky] does not provide
+multicast methodologies as well as our method. On a similar note, Raman
+and Smith suggested a scheme for enabling “smart” configurations, but
+did not fully realize the implications of forward-error correction at
+the time . Unlike many prior approaches, we do not
+attempt to manage or request the development of DHCP. a litany of
+existing work supports our use of Smalltalk.
+
+## Other Citation Styles
 
 ## References
