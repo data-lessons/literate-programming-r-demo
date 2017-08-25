@@ -246,4 +246,21 @@ csl: biomed-central.csl
 {: .challenge}
 
 
+>## Challenge 6 - Add a chode chunk
+> 1. Add a code chunk from the previous lesson -- the babynames one.
+> 2. Add more markdown elements (a list, a link, etc.)
+> 3. Knit 
+
+## Publication Templates 
+
+What if your journal requires submitting articles in a specific way?  `rticles` is a package that contains markdown and latex jounal publisher templates for submission. We can install: 
+
+
+~~~
+install.packages('rticles')
+library(rticles)
+~~~
+{: .r}
+
+
 ## References
