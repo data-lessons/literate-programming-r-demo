@@ -7,3 +7,4 @@ __pycache__
 _site
 .Rproj.user
 _episodes_rmd/*.html
+.Rhistory

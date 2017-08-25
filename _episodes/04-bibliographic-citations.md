@@ -2,18 +2,19 @@
 title: "Adding citations to your R Markdown manuscript"
 author: "Tim Dennis"
 date: "August 20, 2017"
-bibliography: decoupling-dns.bib
-teaching: 45
-questions:
-- "How do I add citations to my RMarkdown document?"
-- "How can I integrate Zotero citations into my RMarkdown document?"
+output:
+  pdf_document: default
+  html_document: default
 objectives:
-- "Define a bibliography in RMarkdown header"
-- "Apply citations inline in document text"
-- "Use an existing Zotero bibliography in RStudio"
-keypoints:
-- ""
-output: html_document
+- Define a bibliography in RMarkdown header
+- Apply citations inline in document text
+- Use an existing Zotero bibliography in RStudio
+keypoints: ''
+questions:
+- How do I add citations to my RMarkdown document?
+- How can I integrate Zotero citations into my RMarkdown document?
+teaching: 45
+bibliography: decoupling-dns.bib
 ---
 
 
@@ -150,15 +151,58 @@ nocite: |
   @qian, @minsky
 ...
 
-## Zotero integration 
+## Using Zotero 
 
-Now we have the basics down, let's think about our bibliography file again. Bibtex is nice and provides structure so a machine can read it, but we don't really want to write it ourself. We can let Zotero do that for us and keep an up-to-date synched Bibtex file in our project folder. That way we can use the more user friendly tool to create and mantain references and always have the latest copy in our project so R can read. 
+Now we have the basics down, let's think about our bibliography file again. Bibtex is nice and provides structure so a machine can read it, but we don't really want to write it ourself. We can let Zotero do that for us and export BibTex file as needed into our R project. We also can use the Zotero Better BibTex plugin to auto-save that BibTex bibliography to our project. Unfortunately, this plugin is broken for Zotero 5 and currently only works in 4. However, they are working on it. Regardless, using Zotero mean that we can use the more user friendly tool to create and mantain references and use that in our project so R can consume. 
 
-What do we need? 
+## Manually Exporting a Bibliography 
 
-1. Zotero with the BetterBibTex plugin installed
-2. A bibliography 
+![Screenshot of Zotero export](../media/zotero5-bib-export.png)
 
 
+
+## Auto-synched Method (Only Zotero 4)
+
+![Screenshot of Zotero export](../media/zotero-better-bibtex.png)
+
+Once you have Zotero-Better-BibTex installed in Zotero 4 you can keep it updated. 
+
+## Citr - An Easier Way to Add Citations
+
+RStudio has this concept of `Addins` that add functionality to the interface when installed. Citr is a R package that, when installed, will add an `Addin` for adding citations to our text. Let's install and see how that works now: 
+
+
+~~~
+install.packages('citr')
+#note that packages that install addins don't need to be referenced by library()
+~~~
+{: .r}
+
+We can now look under the `Addins` dropdown above and see an `insert citations` option. We can also add a keyboard short for this action by selecting `Tools>Modify Keyboard Shortcuts...` and adding the keyboard shortcut for insert citation. Right now, we'll use the menu option. 
+
+![Insert Citations Dialog](../media/insert-citation.png)
+
+The first time you use this it will need to load the bib file. Once loaded, we can select references! 
+
+![Adding references](../media/adding-refs-citr.png)
+
+After you click `Insert citation` your citations will be dropped in whereever your cursor is.  
+
+The simulation of virtual communication has been widely studied. This
+approach is less expensive than ours. On a similar note, recent work by
+Anderson and Raman [@moore; @thomas; @williams] suggests a system for evaluating
+interactive technology, but does not offer an implementation.
+Contrarily, these solutions are entirely orthogonal to our efforts.
+
+
+>The seminal methodology by Thomas et al. [@dekker03; @jackson; @minsky] does not provide
+multicast methodologies as well as our method. On a similar note, Raman
+and Smith suggested a scheme for enabling “smart” configurations, but
+did not fully realize the implications of forward-error correction at
+the time . Unlike many prior approaches, we do not
+attempt to manage or request the development of DHCP. a litany of
+existing work supports our use of Smalltalk.
+
+## Other Citation Styles
 
 ## References
