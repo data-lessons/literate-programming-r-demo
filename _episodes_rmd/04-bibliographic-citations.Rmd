@@ -2,18 +2,19 @@
 title: "Adding citations to your R Markdown manuscript"
 author: "Tim Dennis"
 date: "August 20, 2017"
-bibliography: decoupling-dns.bib
-teaching: 45
-questions:
-- "How do I add citations to my RMarkdown document?"
-- "How can I integrate Zotero citations into my RMarkdown document?"
+output:
+  pdf_document: default
+  html_document: default
 objectives:
-- "Define a bibliography in RMarkdown header"
-- "Apply citations inline in document text"
-- "Use an existing Zotero bibliography in RStudio"
-keypoints:
-- ""
-output: html_document
+- Define a bibliography in RMarkdown header
+- Apply citations inline in document text
+- Use an existing Zotero bibliography in RStudio
+keypoints: ''
+questions:
+- How do I add citations to my RMarkdown document?
+- How can I integrate Zotero citations into my RMarkdown document?
+teaching: 45
+bibliography: decoupling-dns.bib
 ---
 
 ```{r chunk_options, include=FALSE}
