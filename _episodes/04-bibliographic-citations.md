@@ -3,8 +3,8 @@ title: "Adding citations to your R Markdown manuscript"
 author: "Tim Dennis"
 date: "August 20, 2017"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 objectives:
 - Define a bibliography in RMarkdown header
 - Apply citations inline in document text
@@ -15,6 +15,7 @@ questions:
 - How can I integrate Zotero citations into my RMarkdown document?
 teaching: 45
 bibliography: decoupling-dns.bib
+csl: biomed-central.csl
 ---
 
 
@@ -42,11 +43,11 @@ output: html_document
 ---
 ```
 
-This will read `decoupling-dns.bib` file and use to create citations and a bibliography for our file when we render it using our `Knit` button. Let's walk through what that looks like. 
+This line will cause R to read the `decoupling-dns.bib` file and use it to create citations and a bibliography for our document when we render it using our `Knit` button. Let's walk through what that looks like. 
 
 ## Creating a Citation
 
-The actually cite one of our bibtex entries we use the `@` symbol in a couple of ways.  To maek a citation use the following: 
+To actually cite one of our bibtex entries we use the `@` symbol in a couple of ways.  To make a citation use the following: 
 
 ```
 The rest of this paper is organized as follows. We motivate the need for
@@ -65,11 +66,11 @@ Notice that when we knitted the document, a bibliography was added to the end of
 ```
 ## References
 ```
-Now when we knit again our bibliography will be added below the Reference header. 
+Now when we knit again our bibliography will be added below the References header. 
 
 ## Multi-author citations
 
-Ok let's add a multi-author citation to the mix. We'll pull another quote from our dummy paper and add three citation-keys from our bibliography file separated by a semi-colon inside brackets. We can Knit again. 
+Ok let's add a multi-author citation to the mix. We'll pull another quote from our dummy paper and add three citation-keys from our bibliography file separated by a semi-colon inside brackets. We can `Knit` again. 
 
 ```
 Another compelling aim in this area is the visualization of evolutionary
@@ -151,6 +152,19 @@ nocite: |
   @qian, @minsky
 ...
 
+
+>## Challenge 1 - Setting the bibliography
+>1. Add the `decoupling-dns.bib` BibText as the bibliography for the `dekker-dennis-sci.md` file that is inside of the `bib-cite` folder in your working directory. Remember we set the bibliography in the YAML header by `bibliography:` key.
+>2.Create one citation (@dennis05 or @darwin) somewhere in the text. Use the `[]` syntax. 
+>3.Run `Knitr`
+{: .challenge}
+
+
+>## Challenge 2 - Multi-citations and page numbers
+>1. Open the `decoupling-dns.bib` file and pick 3 citations to reference together in the text. Tip: multiple authors are separated by a `;`.
+>2. Add page numbers for the citation and `Knit`. Page numbers follow the citation key with a comma.
+
+
 ## Using Zotero 
 
 Now we have the basics down, let's think about our bibliography file again. Bibtex is nice and provides structure so a machine can read it, but we don't really want to write it ourself. We can let Zotero do that for us and export BibTex file as needed into our R project. We also can use the Zotero Better BibTex plugin to auto-save that BibTex bibliography to our project. Unfortunately, this plugin is broken for Zotero 5 and currently only works in 4. However, they are working on it. Regardless, using Zotero mean that we can use the more user friendly tool to create and mantain references and use that in our project so R can consume. 
@@ -166,6 +180,10 @@ Now we have the basics down, let's think about our bibliography file again. Bibt
 ![Screenshot of Zotero export](../media/zotero-better-bibtex.png)
 
 Once you have Zotero-Better-BibTex installed in Zotero 4 you can keep it updated. 
+
+>## Challenge 3 - Export a bib to your working directory
+> If you have Zotero and a bibliography, try exporting a bib text into the project space. 
+> 
 
 ## Citr - An Easier Way to Add Citations
 
@@ -205,4 +223,19 @@ existing work supports our use of Smalltalk.
 
 ## Other Citation Styles
 
+By default pandoc uses Chicago style format for citations. You can switch this by downloading and specifying a different Citation Style Language `csl` file for other styles. You can find the names of these syles by searching or browsing here: <http://zotero.org/styles>. A github repo of the files are here <https://github.com/citation-style-language/styles>. Find the `csl` you want and navigate to the `raw` version of the file. Then download that file into your project folder. To let RStudio know you want to use it, add `csl:` and name to the YAML like so: 
+
+```
+csl: biomed-central.csl
+```
+
+>## Challenge 4 - Installing and using Citr
+> Using `Insert citations` from the addins dropdown add a few references.
+> Run knitr 
+
+> ## Challenge 5 - Use another citation style
+> In your working folder you should have the csl for MLA and biomed-central. 
+> Change you csl by adding `csl:
+#note that packages that install addins don't need to be referenced by library()
+```
 ## References
