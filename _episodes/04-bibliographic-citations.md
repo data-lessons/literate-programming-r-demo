@@ -154,15 +154,16 @@ nocite: |
 
 
 >## Challenge 1 - Setting the bibliography
->1. Add the `decoupling-dns.bib` BibText as the bibliography for the `dekker-dennis-sci.md` file that is inside of the `bib-cite` folder in your working directory. Remember we set the bibliography in the YAML header by `bibliography:` key.
->2.Create one citation (@dennis05 or @darwin) somewhere in the text. Use the `[]` syntax. 
->3.Run `Knitr`
+> 1. Add the `decoupling-dns.bib` BibText as the bibliography for the `dekker-dennis-sci.md` file that is inside of the `bib-cite` folder in your working directory. Remember we set the bibliography in the YAML header by `bibliography:` key.
+> 2.Create one citation (@dennis05 or @darwin) somewhere in the text. Use the `[]` syntax. 
+> 3.Run `Knitr`
 {: .challenge}
 
 
 >## Challenge 2 - Multi-citations and page numbers
->1. Open the `decoupling-dns.bib` file and pick 3 citations to reference together in the text. Tip: multiple authors are separated by a `;`.
->2. Add page numbers for the citation and `Knit`. Page numbers follow the citation key with a comma.
+> 1. Open the `decoupling-dns.bib` file and pick 3 citations to reference together in the text. Tip: multiple authors are separated by a `;`.
+> 2. Add page numbers for the citation and `Knit`. Page numbers follow the citation key with a comma.
+{: .challenge}
 
 
 ## Using Zotero 
@@ -183,7 +184,9 @@ Once you have Zotero-Better-BibTex installed in Zotero 4 you can keep it updated
 
 >## Challenge 3 - Export a bib to your working directory
 > If you have Zotero and a bibliography, try exporting a bib text into the project space. 
-> 
+> If you have Zotero and no bibliography, try importing our `decoupling-dns.bib` file into Zotero and exporting it as `decoupling-dns2.bib`.  
+> Change the `bibliography: decoupling-dns.bib` in your header and add references. 
+{: .challenge}
 
 ## Citr - An Easier Way to Add Citations
 
@@ -232,10 +235,13 @@ csl: biomed-central.csl
 >## Challenge 4 - Installing and using Citr
 > Using `Insert citations` from the addins dropdown add a few references.
 > Run knitr 
+{: .challenge}
+
 
 > ## Challenge 5 - Use another citation style
 > In your working folder you should have the csl for MLA and biomed-central. 
-> Change you csl by adding `csl:
-#note that packages that install addins don't need to be referenced by library()
-```
+> Change you csl by adding `csl: <filename>` and run Knitr
+{: .challenge}
+
+
 ## References
