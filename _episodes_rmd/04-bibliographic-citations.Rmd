@@ -156,8 +156,8 @@ nocite: |
 
 >## Challenge 1 - Setting the bibliography
 > 1. Add the `decoupling-dns.bib` BibText as the bibliography for the `dekker-dennis-sci.md` file that is inside of the `bib-cite` folder in your working directory. Remember we set the bibliography in the YAML header by `bibliography:` key.
-> 2.Create one citation (@dennis05 or @darwin) somewhere in the text. Use the `[]` syntax. 
-> 3.Run `Knitr`
+> 2. Create one citation (@dennis05 or @darwin) somewhere in the text. Use the `[]` syntax. 
+> 3. Run `Knitr`
 {: .challenge}
 
 
