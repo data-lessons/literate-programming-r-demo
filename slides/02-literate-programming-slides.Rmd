@@ -1,12 +1,27 @@
 ---
-title: "Literate Programming"
-author: "Reproducible Science Curriculum Participants"
+title: "A Hands-on Introduction to Literate Programming with R"
+author: "UCLA Social Science Data Archive"
 output:
   ioslides_presentation:
     highlight: pygments
     widescreen: yes
     css: slides.css
 ---
+## Presenters
+
+* Harrison Dekker, University of Rhode Island Libraries
+* Tim Dennis, UCLA Data Archive
+
+## Attributions
+* Slide deck created by Jenny Bryan
+* Lessons based on the work of multiple Data Carpentry contributors. See AUTHORS file for a complete list.
+
+## Overview
+* Introduction
+* Documenting data manipulation
+* Literate programming with Markdown and R
+* Explore a working Knitr document
+* Adding citations to an R Markdown manuscript
 
 # Motivating literate programming
 

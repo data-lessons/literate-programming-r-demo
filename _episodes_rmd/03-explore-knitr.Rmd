@@ -44,9 +44,9 @@ Open [countryPick4.Rmd](https://github.com/datacarpentry/rr-literate-programming
 
 Save this document with a new filename. The filename should end in `.Rmd`. Use what you have learned from file naming to give an appropriate new name to this report.
 
-**Goal**: Make the report unique by choosing four new countries. Explore a few countries and try to find a combination that shows you something unique about the data. Read through report while running each of the code chunks.
-
-*Stretch Goal*: If you are familiar with `R` and `ggplot`, try adding a fifth country to this report.
+>##Challenge 1 - Modify the report. 
+> 1. Re-run the report, but modify the code to choose four new countries. 
+> 2. (Bonus) If you are familiar with `R` and `ggplot`, try adding a fifth country to this report.
 
 
 ### Step 2: Save new report and knit
@@ -56,9 +56,29 @@ Click on “Knit HTML” or do `File > Knit`. `RStudio` should display a preview
 - Distinguish what was the input and output in creating this document. What role did the `.Rmd` file take and what the .html file?
 - Which file can you delete while still being able to fully reproduce the result? What are all the files that are needed to re-create the `.html` file?
 
-### Step 3: Develop your report
+### Step 3: Develop a new report
 
-In this incremental manner, develop a new report. Add new code to this file. Refine it. Add new chunks. Re-run the report frequently to make sure it works.
+We'll use the code chunk below to develop a new report. It should contain a title, two text blocks and two code blocks. The code requires the dplyr and babynames packages. We'll use the RStudio package pane to install them.
+
+```{R, eval = F}
+library(dplyr)
+library(babynames)
+
+# Plot name frequency over time 
+babynames %>%
+  filter(name == "Mary" & sex == "F") %>%
+  ggplot(aes(x = year, y = n)) +
+  geom_line() + labs(x = "Year", y = "Number Born", 
+                     title = "Mary as a Girl-Name")
+
+# Compare name use by gender over time
+babynames %>%
+  filter(name == "Leslie") %>%
+  ggplot(aes(x = year, y = n)) +
+  geom_line(aes(color = sex)) + labs(x = "Year", y = "Number Born", 
+                                     title = "Leslie, by Sex")
+
+```
 
 Sometimes left-over objects in the workspace make a report appear to fail even though it is correct. Clean out your workspace, restart `R`, and re-run everything if you see weird failures. There are lots of chunk menu items and keyboard shortcuts to accelerate this workflow. Render the whole document often to catch errors when they’re easy to pinpoint and fix. Save often every time you reach a point that you’d like as a “fall back” position.
 
