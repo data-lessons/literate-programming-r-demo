@@ -12,10 +12,6 @@ output:
 * Harrison Dekker, University of Rhode Island Libraries
 * Tim Dennis, UCLA Data Archive
 
-## Attributions
-* Slide deck created by Jenny Bryan
-* Lessons based on the work of multiple Data Carpentry contributors. See AUTHORS file for a complete list.
-
 ## Overview
 * Introduction
 * Documenting data manipulation
@@ -24,7 +20,7 @@ output:
 * Adding citations to an R Markdown manuscript
 
 # Motivating literate programming
-
+(Adapted from Jenny Bryan's slides - https://github.com/datacarpentry/rr-literate-programming)
 ## Issues
 
 How to
