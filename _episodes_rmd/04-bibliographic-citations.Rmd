@@ -157,17 +157,34 @@ Now we have the basics down, let's think about our bibliography file again. Bibt
 
 ## Manually Exporting a Bibliography 
 
-![Screenshot of Zotero export](zotero5-bib-export.png)
+![Screenshot of Zotero export](../media/zotero5-bib-export.png)
 
 
 
 ## Auto-synched Method (Only Zotero 4)
 
-screenshot of zotero4 betterbib
+![Screenshot of Zotero export](../media/zotero-better-bibtex.png)
 
-rstudio view
+Once you have Zotero-Better-BibTex installed in Zotero 4 you can keep it updated. 
 
 ## Citr - An Easier Way to Add Citations
+
+RStudio has this concept of `Addins` that add functionality to the interface when installed. Citr is a R package that, when installed, will add an `Addin` for adding citations to our text. Let's install and see how that works now: 
+
+```{r eval=FALSE}
+install.packages('citr')
+#note that packages that install addins don't need to be referenced by library()
+```
+
+We can now look under the `Addins` dropdown above and see an `insert citations` option. We can also add a keyboard short for this action by selecting `Tools>Modify Keyboard Shortcuts...` and adding the keyboard shortcut for insert citation. Right now, we'll use the menu option. 
+
+![Insert Citations Dialog](../media/insert-citation.png)
+
+The first time you use this it will need to load the bib file. Once loaded, we can select references! 
+
+![Adding references](../media/adding-refs-citr.png)
+
+After you click `Insert citation` your citations will be dropped in whereever your cursor is.  
 
 The simulation of virtual communication has been widely studied. This
 approach is less expensive than ours. On a similar note, recent work by
