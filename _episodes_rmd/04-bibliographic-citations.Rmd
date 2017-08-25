@@ -3,8 +3,8 @@ title: "Adding citations to your R Markdown manuscript"
 author: "Tim Dennis"
 date: "August 20, 2017"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 objectives:
 - Define a bibliography in RMarkdown header
 - Apply citations inline in document text
@@ -43,11 +43,11 @@ output: html_document
 ---
 ```
 
-This will read `decoupling-dns.bib` file and use to create citations and a bibliography for our file when we render it using our `Knit` button. Let's walk through what that looks like. 
+This line will cause R to read the `decoupling-dns.bib` file and use it to create citations and a bibliography for our document when we render it using our `Knit` button. Let's walk through what that looks like. 
 
 ## Creating a Citation
 
-The actually cite one of our bibtex entries we use the `@` symbol in a couple of ways.  To maek a citation use the following: 
+To actually cite one of our bibtex entries we use the `@` symbol in a couple of ways.  To make a citation use the following: 
 
 ```
 The rest of this paper is organized as follows. We motivate the need for
@@ -66,11 +66,11 @@ Notice that when we knitted the document, a bibliography was added to the end of
 ```
 ## References
 ```
-Now when we knit again our bibliography will be added below the Reference header. 
+Now when we knit again our bibliography will be added below the References header. 
 
 ## Multi-author citations
 
-Ok let's add a multi-author citation to the mix. We'll pull another quote from our dummy paper and add three citation-keys from our bibliography file separated by a semi-colon inside brackets. We can Knit again. 
+Ok let's add a multi-author citation to the mix. We'll pull another quote from our dummy paper and add three citation-keys from our bibliography file separated by a semi-colon inside brackets. We can `Knit` again. 
 
 ```
 Another compelling aim in this area is the visualization of evolutionary
