@@ -162,7 +162,9 @@ nocite: |
 
 >## Challenge 2 - Multi-citations and page numbers
 > 1. Open the `decoupling-dns.bib` file and pick 3 citations to reference together in the text. Tip: multiple authors are separated by a `;`.
-> 2. Add page numbers for the citation and `Knit`. Page numbers follow the citation key with a comma.
+> 2. Add page numbers for the citation. Page numbers follow the citation key with a comma.
+> 1. Put a header at the bottom of your document for the bibliography `## References` or something else.
+> 3. Knit
 {: .challenge}
 
 
