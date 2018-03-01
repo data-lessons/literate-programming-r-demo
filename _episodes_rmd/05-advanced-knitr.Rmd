@@ -37,10 +37,7 @@ By following these steps, you have cloned a project shared on my public GitHub s
 
 ### Activity 1
 Using the Files tab in RStudio, locate the file 2-Midlife-Crisis-paper.rmd and open it in the editor.
-Once you have the file open, browse the first few lines.
-Next, run the the first four code chunks by clicking on the green arrows in the upper right corner of 
-each chunk. Watch what happens in the environment tab. Click on each data object name in the environment
-tab and view the data.
+Once you have the file open, browse the first few lines. Next, run the the first four code chunks by clicking on the green arrows in the upper right corner of  each chunk. Watch what happens in the environment tab. Click on each data object name in the environment tab and view the data.
 
 ### Activity 2
 Below the fourth code block is a long section of LaTeX. This section is needed to recreate the layout 
@@ -57,12 +54,3 @@ this output by clicking on the x in the upper right corner of the output box.
 ### Activity 4
 Let's knit the document. You may have to turn your popup blocker off to allow the pdf viewer to open.
 Compare the final pdf to the RMarkdown code. Is it clear what the code is producing. Are there any question?
-
-> ## 1. Documenting data modifications
->
-> - Distinguish between a spreadsheet formatted properly for later analysis in `R` and one formatted improperly.
-> - Be able to recognize common data entry errors and how to handle them.
-> - Be able to describe the concept of 'raw data' and why it is important.
-> - Differentiate between manual and programmatic file manipulation and know the pros and cons of each.
-{: .objectives}
-
