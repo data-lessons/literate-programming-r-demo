@@ -48,9 +48,14 @@ Scroll down to line 224 to see an example of this.  Can you see anything differe
 when it's embedded inline?
 
 ### Activity 3
-Now, let's run the rest of the code chunks. You'll notice that some produce outputs. You can clear 
-this output by clicking on the x in the upper right corner of the output box.
+Now, let's run the remaining code chunks. If any produce output in the editor, you can clear it by 
+clicking on the x in the upper right corner of the output box.
 
 ### Activity 4
 Let's knit the document. You may have to turn your popup blocker off to allow the pdf viewer to open.
-Compare the final pdf to the RMarkdown code. Is it clear what the code is producing. Are there any question?
+Compare the final pdf to the RMarkdown code. Is it clear what the code is producing?
+
+### Activity 5
+One of the strengths of literate programming is the ease with which a document can be recreated to accommodate 
+changes in data or methodology. Let's make a simple change to one of the formulas and see how this works. We'll also
+see how to manage this change in git.
