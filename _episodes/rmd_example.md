@@ -7,7 +7,7 @@ head(x)
 ```
 
 ```
-## [1]  0.02518412  0.24044756 -1.25056883 -0.30709814  0.07216619 -1.11472945
+## [1] -0.9599859 -0.8732070 -0.4101692  0.1285310  1.5587955 -1.0686579
 ```
 
 `knitr` offers a lot of control over representing different
@@ -16,7 +16,7 @@ computed on the fly.
 
 The mean $\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_{i}$ of the
 1000 random variates we generated is
-0.008.
+0.012.
 
 This figure is computed on-the-fly as well. No more
 copy-paste, including for figures:

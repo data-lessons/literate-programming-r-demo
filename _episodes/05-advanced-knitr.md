@@ -1,0 +1,59 @@
+---
+title: "Exploring a complete knitr document"
+teaching: 30
+exercises: 10
+questions:
+- "How do I create formatting that markdown doesn't handle?"
+- "How do I integrate git and GitHub into my knitr workflow?"
+objectives:
+- "See how knitr can handle complex formatting"
+- "See how RStudio integrates version control"
+keypoints:
+- "LaTeX allows us to apply complex document formatting"
+- "Updating a document to accommodate data or code changes or is trivial"
+output:
+      html_document
+---
+
+
+
+## Exploring a complete knitr document
+
+In this section we'll retrieve a complete project stored in a GitHub repository and take a close look
+at how formatted. We'll beging by creating a new project in RStudio.  
+
+
+**Getting started**
+1. Make sure you are connected to RStudio server or are using a local version of RStudio that can "Knit to PDF"
+2. In RStudio, select New Project from the File or use the Project shortcut button in the upper right corner of the interface
+3. Choose Version Control
+4. Choose Git
+5. Enter the following Repository URL: https://github.com/hdekk/midlife
+6. Click the Create Project button
+
+By following these steps, you have cloned a project shared on my public GitHub site onto your workspace on the server or your hard drive if you are running R locally. This approach is fine for a classroom setting or if you are taking a quick look at a project, but a more flexible approach would be to fork the project to your own GitHub repository, then make a local clone of that. This would allow you to push changes you make locally into GitHub thereby giving you a quick and easy way to back up your version control. 
+
+### Activity 1
+Using the Files tab in RStudio, locate the file 2-Midlife-Crisis-paper.rmd and open it in the editor.
+Once you have the file open, browse the first few lines. Next, run the the first four code chunks by clicking on the green arrows in the upper right corner of  each chunk. Watch what happens in the environment tab. Click on each data object name in the environment tab and view the data.
+
+### Activity 2
+Below the fourth code block is a long section of LaTeX. This section is needed to recreate the layout 
+used in the original paper because it includes formatting that markdown is unable to do. Note that 
+LaTeX markup can be added to our RMarkdown document without having to insert a code block. Knitr
+automatically knows how to handle it. It's also possible to embed LaTeX markup within regular text.
+Scroll down to line 224 to see an example of this.  Can you see anything different about the markup 
+when it's embedded inline?
+
+### Activity 3
+Now, let's run the remaining code chunks. If any produce output in the editor, you can clear it by 
+clicking on the x in the upper right corner of the output box.
+
+### Activity 4
+Let's knit the document. You may have to turn your popup blocker off to allow the pdf viewer to open.
+Compare the final pdf to the RMarkdown code. Is it clear what the code is producing?
+
+### Activity 5
+One of the strengths of literate programming is the ease with which a document can be recreated to accommodate 
+changes in data or methodology. Let's make a simple change to one of the formulas and see how this works. We'll also
+see how to manage this change in git.
