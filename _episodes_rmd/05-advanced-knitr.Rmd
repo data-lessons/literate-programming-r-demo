@@ -25,14 +25,15 @@ In this section we'll retrieve a complete project stored in a GitHub repository 
 at how formatted. We'll beging by creating a new project in RStudio.  
 
 
-**Instructions**
-# Connect to RStudio server at rstudio http://35.203.43.213:8787
-# Select Project (upper right corner)
-# Choose New Project
-# Choose Version Control
-# Choose Git
-# Enter the following Repository URL: https://github.com/hdekk/midlife
-# Click the Create Project button
+**Getting started**
+1. Make sure you are connected to RStudio server or are using a local version of RStudio that can "Knit to PDF"
+2. In RStudio, select New Project from the File or use the Project shortcut button in the upper right corner of the interface
+3. Choose Version Control
+4. Choose Git
+5. Enter the following Repository URL: https://github.com/hdekk/midlife
+6. Click the Create Project button
+
+By following these steps, you have cloned a project shared on my public GitHub site onto your workspace on the server or your hard drive if you are running R locally. This approach is fine for a classroom setting or if you are taking a quick look at a project, but a more flexible approach would be to fork the project to your own GitHub repository, then make a local clone of that. This would allow you to push changes you make locally into GitHub thereby giving you a quick and easy way to back up your version control. 
 
 ### Activity 1
 Using the Files tab in RStudio, locate the file 2-Midlife-Crisis-paper.rmd and open it in the editor.
