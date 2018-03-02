@@ -186,7 +186,7 @@ Now we have the basics down, let's think about our bibliography file again. Bibt
 Once you have Zotero-Better-BibTex installed in Zotero you can keep it updated. 
 
 >## Challenge 3 - Export a bib to your working directory
-> If you have Zotero and a bibliography, try exporting a bib text into the project space. 
+=> If you have Zotero and a bibliography, try exporting a bib text into the project space. 
 > If you have Zotero and no bibliography, try importing our `decoupling-dns.bib` file into Zotero and exporting it as `decoupling-dns2.bib`.  
 > Change the `bibliography: decoupling-dns.bib` in your header and add references. 
 {: .challenge}
