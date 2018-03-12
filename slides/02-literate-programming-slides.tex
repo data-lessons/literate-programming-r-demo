@@ -1,0 +1,449 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[ignorenonframetext,]{beamer}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Literate Programming with R},
+            pdfauthor={Tim Dennis},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\newif\ifbibliography
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+\centering
+\begin{beamercolorbox}[sep=16pt,center]{part title}
+  \usebeamerfont{part title}\insertpart\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+\centering
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+  \usebeamerfont{section title}\insertsection\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{part title}
+  \usebeamerfont{subsection title}\insertsubsection\par
+\end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{Literate Programming with R}
+\author{Tim Dennis}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{%
+\protect\hypertarget{overview}{%
+Overview}}
+
+\begin{itemize}
+\tightlist
+\item
+  Introduction
+\item
+  Literate programming with Markdown and R
+\item
+  Explore a working Knitr document
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{%
+\protect\hypertarget{motivating-literate-programming}{%
+Motivating literate programming}}
+
+(Adapted from Jenny Bryan’s slides -
+\url{https://github.com/datacarpentry/rr-literate-programming})
+
+\end{frame}
+
+\begin{frame}{%
+\protect\hypertarget{issues}{%
+Issues}}
+
+\textbf{How to}
+
+\begin{itemize}
+\tightlist
+\item
+  organize your work?
+\item
+  make work more pleasant for yourself? (less tedium, less manual, less
+  \ldots{})
+\item
+  reduce friction for collaboration?
+\item
+  reduce friction for communication?
+\item
+  make your work navigable, interpretable, and repeatable by others?
+\end{itemize}
+
+A lot of this can be built into the normal coding and analysis process
+by using specific tools and habits.
+
+\note{\begin{itemize}
+\tightlist
+\item
+  Motivating example: a small report written with Word, possibly based
+  on last exercise from morning
+
+  \begin{itemize}
+  \tightlist
+  \item
+    E.g., one page report about one country from Gapminder
+  \item
+    What if you want to change to a different country? Rewrite some
+    text, remake a figure, re-insert new figure.
+  \item
+    This is a drag and error prone. This is the problem R Markdown can
+    solve.
+  \end{itemize}
+\end{itemize}}
+
+\end{frame}
+
+\begin{frame}{%
+\protect\hypertarget{getting-the-analysis-right-is-only-one-link}{%
+Getting the analysis right is only one link}}
+
+Process, packaging, and presentation are often the weak links in the
+chain.
+
+\begin{figure}
+\centering
+\includegraphics{../media/brokenChain.jpg}
+\caption{The weakest link in the chain}
+\end{figure}
+
+\end{frame}
+
+\hypertarget{markdown}{%
+\section{Markdown}\label{markdown}}
+
+\begin{frame}{%
+\protect\hypertarget{what-is-markdown}{%
+What is Markdown?}}
+
+\begin{itemize}
+\tightlist
+\item
+  Markdown is a particular type of markup language. Markup languages are
+  designed to produce documents from plain text.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    You may be familiar with \emph{LaTeX}, another (though less human
+    friendly) text markup language.
+  \end{itemize}
+\item
+  Tools render markdown to different formats (for example,
+  HTML/pdf/Word).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The main tool for rendering markdown is
+    \href{http://johnmacfarlane.net/pandoc/}{pandoc}).
+  \end{itemize}
+\end{itemize}
+
+Adapted from
+\href{http://cpsievert.github.io/slides/markdown/\#/2}{Carson Sievert’s
+markdown slides}.
+
+\end{frame}
+
+\begin{frame}{%
+\protect\hypertarget{why-markdown}{%
+Why Markdown?}}
+
+\begin{itemize}
+\tightlist
+\item
+  Easy to learn and use. Focus on \emph{content}, rather than
+  \emph{coding} and debugging \emph{errors}.
+\item
+  Easy to edit yet very flexible. Can add HTML, CSS, and JavaScript.
+\item
+  The rendering process is through tools and is thus an automatable and
+  repeatable process.
+\item
+  Lends itself well to version control, collaboration, sharing, and
+  reuse.
+\end{itemize}
+
+Adapted from
+\href{http://cpsievert.github.io/slides/markdown/\#/1}{Carson Sievert’s
+markdown slides}.
+
+\end{frame}
+
+\begin{frame}{%
+\protect\hypertarget{markdown-enables-fast-publishing-to-the-web}{%
+Markdown enables fast publishing to the web}}
+
+\textbf{Markdown}: Easy to write and read in an editor
+
+\textbf{HTML}: Easy to publish and read on the web
+
+\end{frame}
+
+\begin{frame}{%
+\protect\hypertarget{markdown-versus-html-code}{%
+Markdown versus HTML code}}
+
+\end{frame}
+
+\begin{frame}[fragile]{%
+\protect\hypertarget{markdown-versus-rendered-html}{%
+Markdown versus rendered HTML}}
+
+This is a Markdown document.
+
+Medium header
+
+It’s easy to do \emph{italics} or \textbf{make things bold}.
+
+\begin{quote}
+All models are wrong, but some are useful. An approximate answer to the
+right problem is worth a good deal more than an exact answer to an
+approximate problem.
+\end{quote}
+
+Code block below. Just affects formatting here.
+
+\begin{verbatim}
+x <- 3 * 4
+\end{verbatim}
+
+I can haz equations. Inline equations, such as the average is computed
+as \(\frac{1}{n} \sum_{i=1}^{n} x_{i}\). Or display equations like this:
+
+\[
+\begin{equation*}
+|x|= 
+\begin{cases} x & \text{if $x\ge 0$,} \\\\
+-x &\text{if $x\lt 0$.}
+\end{cases}
+\end{equation*}
+\]
+
+\end{frame}
+
+\begin{frame}[fragile]{%
+\protect\hypertarget{markdown-can-be-rendered-to-multiple-formats}{%
+Markdown can be rendered to multiple formats}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{pandoc} is a swiss-army knife tool for conversion
+\end{itemize}
+
+\end{frame}
+
+\hypertarget{r-markdown}{%
+\section{R Markdown}\label{r-markdown}}
+
+\begin{frame}{%
+\protect\hypertarget{r-markdown-is-rendered-to-markdown}{%
+R Markdown is rendered to Markdown}}
+
+\end{frame}
+
+\begin{frame}[fragile]{%
+\protect\hypertarget{ideas-code-and-generated-results-tied-together}{%
+Ideas, code, and generated results tied together}}
+
+This is an R Markdown document.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  1.0795501 -0.5202478 -0.6306888 -0.3469508  0.6252589  0.6442898
+\end{verbatim}
+
+\texttt{knitr} offers a lot of control over representing different types
+of output. We can also have inline R expressions computed on the fly.
+The mean \(\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_{i}\) of the 1000
+random variates we generated is -0.026. No more copy-paste, including
+for figures:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{density}\NormalTok{(x))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{02-literate-programming-slides_files/figure-beamer/unnamed-chunk-3-1.pdf}
+
+\end{frame}
+
+\begin{frame}{%
+\protect\hypertarget{can-be-rendered-interactively-in-rstudio}{%
+Can be rendered interactively in RStudio}}
+
+\end{frame}
+
+\begin{frame}[fragile]{%
+\protect\hypertarget{rendering-can-be-automated-is-thus-repeatable}{%
+Rendering can be automated is thus repeatable}}
+
+From within R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rmarkdown}\OperatorTok{::}\KeywordTok{render}\NormalTok{(}\StringTok{"filename.Rmd"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+From the command line:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{$ }\ExtensionTok{Rscript}\NormalTok{ -e }\StringTok{"rmarkdown::render('filename.Rmd')"}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}[fragile]{%
+\protect\hypertarget{summary}{%
+Summary}}
+
+\begin{itemize}
+\item
+  R Markdown enables ideas and questions, the code that implements them,
+  and the results generated by the implementation, to all stay together.
+\item
+  R Markdown toolchain allows automated, repeatable rendering
+
+  \begin{itemize}
+  \tightlist
+  \item
+    for publishing to the web and viewing through a browser,
+  \item
+    and (through LaTeX) to obtain a submittable manuscript (in PDF or
+    Word).
+  \end{itemize}
+\item
+  \texttt{knitr} is not limited to executing R code. See the book
+  \emph{Dynamic documents with R and knitr} by Yihui Xie, part of the
+  CRC Press / Chapman \& Hall R Series (2013). ISBN:
+  \href{http://www.isbnsearch.org/isbn/9781482203530}{9781482203530}.
+\end{itemize}
+
+\end{frame}
+
+\end{document}

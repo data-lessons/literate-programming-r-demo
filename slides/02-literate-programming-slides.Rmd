@@ -2,10 +2,12 @@
 title: "Literate Programming with R"
 author: "Tim Dennis"
 output:
+  beamer_presentation:
+    highlight: pygments
   ioslides_presentation:
+    css: slides.css
     highlight: pygments
     widescreen: yes
-    css: slides.css
 ---
 ## Overview
 * Introduction
