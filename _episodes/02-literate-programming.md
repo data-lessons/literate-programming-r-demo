@@ -21,10 +21,10 @@ output:
 > ## 2. Literate programming
 >
 > - Organize your work
-> - Make work more pleasant for yourself? (less tedium, less manual, less ...)
-> - Reduce friction for collaboration
-> - Reduce friction for communication
-> - Make your work navigable, interpretable, and repeatable by others
+> - make work more pleasant for yourself? (less tedium, less manual, less ...)
+> - reduce friction for collaboration?
+> - reduce friction for communication?
+> - make your work navigable, interpretable, and repeatable by others?
 {: .objectives}
 
 #### Getting the analysis right is only one link

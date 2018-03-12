@@ -1,29 +1,24 @@
 ---
-title: "A Hands-on Introduction to Literate Programming with R"
-author: "UCLA Social Science Data Archive"
+title: "Literate Programming with R"
+author: "Tim Dennis"
 output:
   ioslides_presentation:
     highlight: pygments
     widescreen: yes
     css: slides.css
 ---
-## Presenters
-
-* Harrison Dekker, University of Rhode Island Libraries
-* Tim Dennis, UCLA Data Archive
-
 ## Overview
 * Introduction
-* Documenting data manipulation
 * Literate programming with Markdown and R
 * Explore a working Knitr document
-* Adding citations to an R Markdown manuscript
 
-# Motivating literate programming
+## Motivating literate programming
+
 (Adapted from Jenny Bryan's slides - https://github.com/datacarpentry/rr-literate-programming)
+
 ## Issues
 
-How to
+**How to**
 
 * organize your work?
 * make work more pleasant for yourself? (less tedium, less manual, less ...) 
@@ -33,11 +28,18 @@ How to
 
 A lot of this can be built into the normal coding and analysis process by using specific tools and habits.
 
+<div class="notes">
+* Motivating example: a small report written with Word, possibly based on last exercise from morning
+    - E.g., one page report about one country from Gapminder
+    - What if you want to change to a different country? Rewrite some text, remake a figure, re-insert new figure.
+    - This is a drag and error prone. This is the problem R Markdown can solve.
+</div>
+
 ## Getting the analysis right is only one link
 
 Process, packaging, and presentation are often the weak links in the chain.
 
-![The weakest link in the chain](media/brokenChain.jpg)
+![The weakest link in the chain](../media/brokenChain.jpg)
 
 # Markdown
 
@@ -122,8 +124,8 @@ body {
 &lt;pre&gt;&lt;code&gt;x &lt;- 3 * 4
 &lt;/code&gt;&lt;/pre&gt;
 </pre>
-<img style="max-width: 80px; position: absolute; left: 50%; top: 4.1em; margin-left: -85px;" src="media/smiley-face-clipart.png"/>
-<img style="max-width: 80px; position: absolute; left: 95%; top: 4.1em; margin-left: -80px;" src="media/frowny-face-clipart.png"/>
+<img style="max-width: 80px; position: absolute; left: 50%; top: 4.1em; margin-left: -85px;" src="../media/smiley-face-clipart.png"/>
+<img style="max-width: 80px; position: absolute; left: 95%; top: 4.1em; margin-left: -80px;" src="../media/frowny-face-clipart.png"/>
 
 ## Markdown versus rendered HTML {.code-columns}
 
@@ -180,15 +182,15 @@ $$
 \end{equation*}
 $$
 </div>
-<img style="max-width: 80px; position: absolute; left: 50%; top: 4.1em; margin-left: -85px;" src="media/smiley-face-clipart.png"/>
-<img style="max-width: 80px; position: absolute; left: 95%; top: 4.1em; margin-left: -80px;" src="media/smiley-face-clipart.png"/>
+<img style="max-width: 80px; position: absolute; left: 50%; top: 4.1em; margin-left: -85px;" src="../media/smiley-face-clipart.png"/>
+<img style="max-width: 80px; position: absolute; left: 95%; top: 4.1em; margin-left: -80px;" src="../media/smiley-face-clipart.png"/>
 
 ## Markdown can be rendered to multiple formats
 
 * `pandoc` is a swiss-army knife tool for conversion
 
 <div style="margin-top: 1.5em; margin-left: -20%; text-align: center;">
-<img style="max-width: 120%;" src="media/pandoc-diagram.jpg"/>
+<img style="max-width: 120%;" src="../media/pandoc-diagram.jpg"/>
 </div>
 
 # R Markdown
@@ -261,7 +263,7 @@ plot(density(x))
 ## Can be rendered interactively in RStudio
 
 <div style="margin-top: 1em; text-align: center;">
-<img style="max-width: 96%;" src="media/knitrButton-screenshot.png"/>
+<img style="max-width: 96%;" src="../media/knitrButton-screenshot.png"/>
 </div>
 
 ## Rendering can be automated is thus repeatable
